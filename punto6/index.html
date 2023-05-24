@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bandera de Paraguay</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
+        
+    </head>
+    <body>
+       
+        <h1><u>Bandera de Paraguay</u> </h1>
+        <h4>Alumno: Paniagua Nahuel</h4>
+        <div id="div" src=""></div>
+        <canvas id="cuadrado"></canvas>
+        <canvas id="cuadradoInvertido"></canvas>
+        <script>
+       
+//cuadrado grande redimesionado:
+
+        const cuadrado = tf.tensor([
+    [
+    [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]  
+    ],
+    [
+    [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]  
+    ],
+    [
+    [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]  
+    ],
+    [
+    [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]  
+    ],
+    [
+    [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]  
+    ],
+    
+  [
+  [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]
+  ],
+  [
+  [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0], [255, 0, 0]
+  ],
+  [
+  [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255,255]  
+  ],
+  [
+  [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255,255] 
+  ],
+  [
+  [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255,255]
+  ],
+  [
+  [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255,255]
+  ],
+  [
+  [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255,255]
+  ],
+  [
+  [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255,255]
+  ],
+  [
+  [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255, 255], [255, 255,255]
+  ],
+  [
+  [0, 0, 255], [0, 0, 255], [0, 0, 255], [0, 0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0, 0, 255]  
+  ],
+  [
+  [0, 0, 255], [0, 0, 255], [0, 0, 255], [0, 0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0, 0, 255]  
+  ],
+  [
+  [0, 0, 255], [0, 0, 255], [0, 0, 255], [0, 0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0, 0, 255]  
+    ],
+    [
+  [0, 0, 255], [0, 0, 255], [0, 0, 255], [0, 0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0, 0, 255]  
+    ],
+    [
+  [0, 0, 255], [0, 0, 255], [0, 0, 255], [0, 0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0, 0, 255]  
+    ],
+    [
+  [0, 0, 255], [0, 0, 255], [0, 0, 255], [0, 0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0, 0, 255]  
+    ],
+    [
+  [0, 0, 255], [0, 0, 255], [0, 0, 255], [0, 0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0,0, 255], [0, 0, 255]  
+    ],
+], null, 'int32');
+
+ const cuadradoNormal = cuadrado.div(255);
+
+ //aquí agrando la bandera al doble:
+
+const agrandarCuadro = tf.image.resizeBilinear(cuadradoNormal, [50, 80]);
+const canvasCuadrado = document.getElementById('cuadrado');
+tf.browser.toPixels(agrandarCuadro, canvasCuadrado).then(() => {
+  agrandarCuadro.dispose(); // Limpiar la imagen redimensionada
+  cuadrado.dispose(); // Limpiar el tensor original
+  console.log('Memoria de la bandera normal: ',tf.memory().numBytes);
+});
+
+//aquí invierto la bandera:
+
+const cuadradoparaInvertir = cuadrado.div(255);
+const cuadradoInvertido = tf.reverse(cuadradoparaInvertir, axis=[0])
+const agrandarCuadroInvertido = tf.image.resizeBilinear(cuadradoInvertido, [50, 80]);
+const mostrar = document.getElementById('cuadradoInvertido');
+tf.browser.toPixels(agrandarCuadroInvertido, mostrar).then(() => {
+  agrandarCuadroInvertido.dispose(); // Limpiar la imagen redimensionada
+  cuadrado.dispose(); // Limpiar el tensor original
+  console.log('Memoria de la bandera invertida: ',tf.memory().numBytes);
+});
+
+        </script>
+    </body>
+</html>
